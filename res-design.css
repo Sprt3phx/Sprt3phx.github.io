@@ -1,0 +1,108 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounceIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.bounce-icon {
+  animation: bounceIcon 1s infinite;
+}
+
+ul li:first-child {
+    font-weight: bold;
+}
+
+section.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  animation: fadeIn 1s ease-out;
+}
+
+.cta-button:hover {
+  box-shadow: 0 0 10px #00bcd4;
+  transform: scale(1.05);
+}
+
+h1:hover {
+    text-shadow: 0 0 10px #ff69b4;
+}
+body.dark-mode {
+  background-color: #0f0f0f;
+  color: #d1d5db;
+}
+
+.about-bg {
+    background: url('');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 400px; /* Adjust as needed */
+    width: 100%;
+    position: relative;
+}
+
+.about-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.2); /* White overlay with opacity */
+    z-index: 0;
+}
+.about-bg > * {
+    background-image: url('images/graySmoke.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+}
+
+.contact-bg {
+    background-image: url('images/tealSmoke.jpg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 400px; /* Adjust as needed */
+    width: 100%;
+}
+.dropcap::first-letter {
+  font-size: 3rem;          /* big first letter */
+  font-weight: bold;        /* heavier weight */
+  color: #ec4899;           /* Tailwind pink-500 */
+  float: left;              /* make it sit beside text */
+  line-height: 1;           /* tighter spacing */
+  margin-right: 0.25rem;  
+  font-family: 'Uncial Antiqua', serif; 
+}
+.magical-divider {
+  height: 4px; /* thickness of the divider */
+  background: linear-gradient(
+    90deg,
+    rgba(236, 72, 153, 0) 0%,      /* pink fade in */
+    rgba(236, 72, 153, 0.8) 50%,  /* pink glow center */
+    rgba(236, 72, 153, 0) 100%    /* pink fade out */
+  );
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.8),
+              0 0 30px rgba(236, 72, 153, 0.6);
+  border-radius: 9999px; /* makes it look like light instead of a block */
+  margin: 2rem auto; /* spacing between sections */
+  width: 80%; /* not full width, looks more elegant */
+}
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.8),
+                0 0 30px rgba(236, 72, 153, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(236, 72, 153, 1),
+                0 0 50px rgba(236, 72, 153, 0.9);
+  }
+}
+
+.magical-divider {
+  animation: glowPulse 3s infinite alternate;
+}
